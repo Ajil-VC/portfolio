@@ -84,26 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', revealOnScroll);
     revealOnScroll(); // Trigger on load
 
-    // Download Resume Interactivity (Mock)
-    const resumeBtn = document.getElementById('download-resume');
-    if (resumeBtn) {
-        resumeBtn.addEventListener('click', (e) => {
-            e.preventDefault();
 
-            const originalText = resumeBtn.innerText;
-            resumeBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> Downloading...';
-
-            setTimeout(() => {
-                resumeBtn.innerHTML = '<i class="fa-solid fa-check"></i> Downloaded';
-                resumeBtn.style.backgroundColor = '#339933';
-
-                setTimeout(() => {
-                    resumeBtn.innerHTML = originalText;
-                    resumeBtn.style.backgroundColor = '';
-                }, 3000);
-            }, 1500);
-        });
-    }
 
     // Subtly Animated Particles for Hero Image
     const canvas = document.getElementById('particles-canvas');
