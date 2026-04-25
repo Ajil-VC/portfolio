@@ -891,11 +891,17 @@ nav.scrolled {
     height: 100%;
     background: rgba(10, 10, 12, 0.8);
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
     opacity: 1;
-    /* Always visible on mobile potentially, or hide behind tap? Given hover doesn't exist on mobile, we can show it partially or leave hidden and rely on card click. Let's make it visible on active/focus, or keep default. Actually, relying on opacity 0 makes buttons invisible on mobile. Let's fix that. */
+}
+
+.overlay-row {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
 }
 
 /* Mobile: Overlay visible or buttons shown below? Buttons below is better for mobile, but let's just make overlay visible on focus/active */
@@ -1019,6 +1025,17 @@ nav.scrolled {
     border: 1px solid var(--glass-border);
 }
 
+.address-box.multi-line {
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.contact-row {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 @media (min-width: 768px) {
     .address-box {
         margin-bottom: 2rem;
@@ -1034,6 +1051,17 @@ nav.scrolled {
 
 .address-box p {
     color: var(--text-secondary);
+}
+
+.email-link {
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    word-break: break-all;
+}
+
+.email-link:hover {
+    color: var(--accent);
 }
 
 .social-title {
