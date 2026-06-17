@@ -14,6 +14,7 @@
     --node: #339933;
     --express: #ffffff;
     --mongo: #47a248;
+    --postgres: #336791;
     --js: #f7df1e;
     --ts: #3178c6;
     --html: #e34f26;
@@ -700,13 +701,23 @@ nav.scrolled {
 .skill-icon {
     font-size: 2.5rem;
     margin-bottom: 0.8rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.postgres-icon {
+    width: 2.5rem;
+    height: 2.5rem;
 }
 
 @media (min-width: 768px) {
     .skill-icon {
         font-size: 3rem;
         margin-bottom: 1rem;
+    }
+
+    .postgres-icon {
+        width: 3rem;
+        height: 3rem;
     }
 }
 
@@ -736,6 +747,10 @@ nav.scrolled {
 
     .skill-card:hover .mongo-color {
         color: var(--mongo);
+    }
+
+    .skill-card:hover .postgres-color {
+        color: var(--postgres);
     }
 
     .skill-card:hover .js-color {
