@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW15PMFG30"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-VW15PMFG30');
+    </script>
+
+    <meta charset="UTF-8">
+    <link rel="icon" href="./assets/favicon.png" sizes="any">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project — Ajil VC</title>
+    <meta name="description" content="Project case study — Ajil VC, MEAN Stack Developer.">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav id="navbar" class="scrolled">
+        <div class="nav-container">
+            <a href="index.html#hero" class="logo">AJIL<span>.</span></a>
+            <ul class="nav-links">
+                <li><a href="index.html#about" class="nav-link">About</a></li>
+                <li><a href="index.html#skills" class="nav-link">Skills</a></li>
+                <li><a href="index.html#projects" class="nav-link">Projects</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Project Detail -->
+    <section class="section project-detail">
+        <div class="container">
+            <a href="index.html#projects" class="back-link"><i class="fa-solid fa-arrow-left"></i> Back to
+                Projects</a>
+
+            <div id="project-content" class="project-detail-content reveal">
+                <!-- Populated by project.js -->
+            </div>
+
+            <div id="project-not-found" class="project-not-found" hidden>
+                <h2 class="section-title">Project not found</h2>
+                <p class="about-text">The project you're looking for doesn't exist or may have moved.</p>
+                <a href="index.html#projects" class="btn btn-primary" style="margin-top: 1.5rem;">Back to
+                    Projects</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Ajil VC. Designed &amp; Built with passion.</p>
+        </div>
+    </footer>
+
+    <script src="projects-data.js"></script>
+    <script src="project.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
