@@ -608,30 +608,31 @@ nav.scrolled {
     z-index: 1;
 }
 
-.mandala-deco {
+.about-ornament {
     position: absolute;
     z-index: 0;
-    opacity: 0.07;
+    color: var(--text-secondary);
+    opacity: 0.16;
     pointer-events: none;
     user-select: none;
     transform-origin: center center;
 }
 
-.mandala-deco-1 {
+.about-ornament-1 {
     width: clamp(460px, 62vw, 880px);
     top: -20%;
     right: -14%;
-    animation: mandala-spin 140s linear infinite;
+    animation: ornament-spin 140s linear infinite;
 }
 
-.mandala-deco-2 {
+.about-ornament-2 {
     width: clamp(300px, 40vw, 560px);
     bottom: -22%;
     left: -12%;
-    animation: mandala-spin 100s linear infinite reverse;
+    animation: ornament-spin 100s linear infinite reverse;
 }
 
-@keyframes mandala-spin {
+@keyframes ornament-spin {
     from {
         transform: rotate(0deg);
     }
@@ -642,7 +643,7 @@ nav.scrolled {
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .mandala-deco {
+    .about-ornament {
         animation: none;
     }
 }
