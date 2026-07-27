@@ -383,11 +383,9 @@ nav.scrolled {
 /* Hero Image */
 .hero-image-wrapper {
     width: 100%;
-    max-width: 280px;
+    max-width: 340px;
     margin: 0 auto;
     position: relative;
-    border-radius: 100%;
-    aspect-ratio: 1/1;
     z-index: 1;
 }
 
@@ -403,13 +401,13 @@ nav.scrolled {
 
 @media (min-width: 768px) {
     .hero-image-wrapper {
-        max-width: 360px;
+        max-width: 460px;
     }
 }
 
 @media (min-width: 1024px) {
     .hero-image-wrapper {
-        max-width: 400px;
+        max-width: 540px;
         margin: 0;
     }
 }
@@ -417,12 +415,8 @@ nav.scrolled {
 .hero-img {
     width: 100%;
     height: auto;
-    border-radius: 100%;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    border: 2px solid var(--glass-border);
-    object-fit: cover;
-    aspect-ratio: 1/1;
-    background-color: var(--bg-tertiary);
+    display: block;
+    filter: drop-shadow(0 25px 45px rgba(0, 0, 0, 0.55));
     position: relative;
     z-index: 2;
 }
@@ -903,13 +897,10 @@ nav.scrolled {
     }
 }
 
-@media (min-width: 1024px) {
-    .projects-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-
 .project-card {
+    display: block;
+    text-decoration: none;
+    color: inherit;
     background: var(--bg-tertiary);
     border-radius: 12px;
     overflow: hidden;
@@ -944,38 +935,34 @@ nav.scrolled {
     transition: transform 0.5s ease, filter 0.5s ease;
 }
 
-.project-overlay {
+.project-badge {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(10, 10, 10, 0.85);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-    opacity: 1;
+    top: 14px;
+    left: 14px;
+    z-index: 2;
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 0.35rem 0.8rem;
+    border-radius: 20px;
+    background: rgba(10, 10, 10, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid var(--glass-border);
 }
 
-.overlay-row {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
+.project-badge.client {
+    color: var(--accent-gold);
+    border-color: rgba(176, 141, 87, 0.4);
 }
 
-/* Mobile: Overlay visible or buttons shown below? Buttons below is better for mobile, but let's just make overlay visible on focus/active */
+.project-badge.personal {
+    color: var(--accent-light);
+    border-color: rgba(127, 146, 168, 0.35);
+}
+
 @media (max-width: 1023px) {
-    .project-overlay {
-        opacity: 0;
-        /* Keep it similar but visible on touch */
-    }
-
-    .project-card:active .project-overlay {
-        opacity: 1;
-    }
-
     .project-card:active .project-img {
         filter: saturate(1) brightness(1);
     }
@@ -986,14 +973,33 @@ nav.scrolled {
         transform: scale(1.05);
         filter: saturate(1) brightness(1);
     }
+}
 
-    .project-overlay {
-        opacity: 0;
-        transition: opacity 0.3s ease;
+.project-view-link {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    color: var(--accent-gold);
+    transition: gap 0.3s ease;
+}
+
+.project-view-link i {
+    font-size: 0.75rem;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 1024px) {
+    .project-card:hover .project-view-link {
+        gap: 0.8rem;
     }
 
-    .project-card:hover .project-overlay {
-        opacity: 1;
+    .project-card:hover .project-view-link i {
+        transform: translateX(3px);
     }
 }
 
@@ -1237,4 +1243,151 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Project Detail Page */
+.project-detail {
+    display: block;
+    min-height: auto;
+    padding: 120px 0 60px;
+}
+
+@media (min-width: 768px) {
+    .project-detail {
+        padding: 140px 0 80px;
+    }
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+}
+
+.back-link:hover {
+    color: var(--accent-light);
+}
+
+.project-detail-content .project-badge {
+    position: static;
+    display: inline-block;
+}
+
+.project-detail-title {
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin-top: 1.5rem;
+}
+
+.project-detail-tagline {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-top: 0.5rem;
+}
+
+.project-detail-hero-img-wrapper {
+    margin-top: 2rem;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--glass-border);
+}
+
+.project-detail-hero-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.project-detail-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.project-detail-tech {
+    margin-top: 1.5rem;
+}
+
+.project-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+    .project-detail-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2.5rem;
+    }
+}
+
+.project-detail-section h3 {
+    font-family: var(--font-display);
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.6rem;
+    color: var(--text-primary);
+}
+
+.project-detail-section p {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+.project-detail-section-full {
+    grid-column: 1 / -1;
+}
+
+.project-detail-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.project-nav-link {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    text-decoration: none;
+    padding: 0.5rem 0;
+    max-width: 45%;
+}
+
+.project-nav-link.next {
+    text-align: right;
+    align-items: flex-end;
+    margin-left: auto;
+}
+
+.project-nav-label {
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.project-nav-name {
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.project-nav-link:hover .project-nav-name {
+    color: var(--accent-gold);
+}
+
+.project-not-found {
+    padding-top: 2rem;
 }
