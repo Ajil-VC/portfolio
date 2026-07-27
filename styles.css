@@ -8,6 +8,9 @@
     --accent-light: #7F92A8;
     --accent-hover: #617489;
     --accent-shadow: rgba(79, 96, 117, 0.35);
+    --accent-gold: #b08d57;
+    --accent-gold-hover: #c4a06a;
+    --gold-shadow: rgba(176, 141, 87, 0.35);
     --glass-bg: rgba(20, 20, 20, 0.7);
     --glass-border: rgba(255, 255, 255, 0.08);
     --font-display: 'Playfair Display', 'Georgia', serif;
@@ -143,9 +146,9 @@ body::after {
 }
 
 .btn-primary {
-    background: var(--accent);
-    color: white;
-    box-shadow: 0 4px 15px var(--accent-shadow);
+    background: var(--accent-gold);
+    color: var(--bg-main);
+    box-shadow: 0 4px 15px var(--gold-shadow);
 }
 
 .btn-secondary {
@@ -167,9 +170,9 @@ body::after {
 
 @media (min-width: 1024px) {
     .btn-primary:hover {
-        background: var(--accent-hover);
+        background: var(--accent-gold-hover);
         transform: translateY(-2px);
-        box-shadow: 0 6px 20px rgba(79, 96, 117, 0.45);
+        box-shadow: 0 6px 20px rgba(176, 141, 87, 0.45);
     }
 
     .btn-secondary:hover {
@@ -221,7 +224,7 @@ nav.scrolled {
 }
 
 .logo span {
-    color: var(--accent-light);
+    color: var(--accent-gold);
 }
 
 /* Mobile Hamburger Menu */
@@ -735,13 +738,14 @@ nav.scrolled {
 
     .skill-card:hover .skill-icon {
         transform: scale(1.1);
+        filter: saturate(0.55) brightness(0.9);
     }
 }
 
 .skill-icon {
     font-size: 2.5rem;
     margin-bottom: 0.8rem;
-    transition: transform 0.3s ease, color 0.3s ease;
+    transition: transform 0.3s ease, color 0.3s ease, filter 0.3s ease;
 }
 
 .postgres-icon {
@@ -935,7 +939,8 @@ nav.scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    filter: saturate(0.4) brightness(0.85);
+    transition: transform 0.5s ease, filter 0.5s ease;
 }
 
 .project-overlay {
@@ -969,11 +974,16 @@ nav.scrolled {
     .project-card:active .project-overlay {
         opacity: 1;
     }
+
+    .project-card:active .project-img {
+        filter: saturate(1) brightness(1);
+    }
 }
 
 @media (min-width: 1024px) {
     .project-card:hover .project-img {
         transform: scale(1.05);
+        filter: saturate(1) brightness(1);
     }
 
     .project-overlay {
