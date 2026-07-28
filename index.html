@@ -2,19 +2,40 @@
 <html lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-VW15PMFG30"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-VW15PMFG30');
-    </script>
-
     <meta charset="UTF-8">
-    <link rel="icon" href="./assets/favicon.png" sizes="any">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajil VC - MEAN Stack Developer</title>
-    <meta name="description" content="Portfolio of Ajil VC, a passionate MEAN Stack and JavaScript Developer.">
+
+    <title>Ajil VC | MEAN Stack Developer in Malappuram, Kerala</title>
+    <meta name="description"
+        content="Ajil VC is a MEAN Stack Developer based in Malappuram, Kerala, India, building fast, scalable web applications with Angular, Node.js, Express.js and MongoDB.">
+    <meta name="author" content="Ajil VC">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#0a0a0a">
+    <link rel="canonical" href="https://ajil-vc.github.io/portfolio/">
+
+    <!-- Open Graph (Facebook, LinkedIn, WhatsApp) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ajil-vc.github.io/portfolio/">
+    <meta property="og:site_name" content="Ajil VC — Portfolio">
+    <meta property="og:title" content="Ajil VC | MEAN Stack Developer in Malappuram, Kerala">
+    <meta property="og:description"
+        content="MEAN Stack Developer based in Malappuram, Kerala, India, building fast, scalable web applications with Angular, Node.js, Express.js and MongoDB.">
+    <meta property="og:image" content="https://ajil-vc.github.io/portfolio/assets/HERO.webp">
+    <meta property="og:image:alt" content="Ajil VC — MEAN Stack Developer">
+    <meta property="og:locale" content="en_IN">
+
+    <!-- Twitter / X Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@AjilVc">
+    <meta name="twitter:creator" content="@AjilVc">
+    <meta name="twitter:title" content="Ajil VC | MEAN Stack Developer in Malappuram, Kerala">
+    <meta name="twitter:description"
+        content="MEAN Stack Developer based in Malappuram, Kerala, India, building fast, scalable web applications with Angular, Node.js, Express.js and MongoDB.">
+    <meta name="twitter:image" content="https://ajil-vc.github.io/portfolio/assets/HERO.webp">
+    <meta name="twitter:image:alt" content="Ajil VC — MEAN Stack Developer">
+
+    <link rel="icon" href="./assets/favicon.ico" sizes="any">
+    <link rel="preload" as="image" href="assets/HERO.webp">
     <link rel="stylesheet" href="styles.css">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -24,6 +45,34 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800;900&display=swap"
         rel="stylesheet">
+
+    <!-- Structured data: helps Google's Knowledge Graph and AI assistants identify Ajil as one entity across sites -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Ajil VC",
+        "jobTitle": "MEAN Stack Developer",
+        "url": "https://ajil-vc.github.io/portfolio/",
+        "image": "https://ajil-vc.github.io/portfolio/assets/HERO.webp",
+        "email": "mailto:vcajiltvr@gmail.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Malappuram",
+            "addressRegion": "Kerala",
+            "addressCountry": "IN"
+        },
+        "sameAs": [
+            "https://www.linkedin.com/in/ajil-vc-fullstackdeveloper/",
+            "https://github.com/Ajil-VC",
+            "https://leetcode.com/u/vcajiltvr/",
+            "https://www.instagram.com/vcajil/",
+            "https://www.facebook.com/vc.ajil",
+            "https://x.com/AjilVc"
+        ],
+        "knowsAbout": ["Angular", "Node.js", "Express.js", "MongoDB", "PostgreSQL", "JavaScript", "TypeScript"]
+    }
+    </script>
 </head>
 
 <body>
@@ -32,7 +81,8 @@
         <div class="nav-container">
             <a href="#hero" class="logo">AJIL<span>.</span></a>
             <ul class="nav-links">
-                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#hero" class="nav-link">Home</a></li>
+                <li><a href="#about" class="nav-link">Approach</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
@@ -49,7 +99,6 @@
     <section id="hero" class="section hero">
         <div class="container hero-container">
             <div class="hero-image-wrapper reveal">
-                <canvas id="particles-canvas"></canvas>
                 <img src="assets/HERO.webp" alt="Ajil VC" class="hero-img">
             </div>
             <div class="hero-content reveal">
@@ -59,8 +108,10 @@
                     <span class="role">MEAN Stack Developer</span>
                     <span class="role">JavaScript Developer</span>
                     <span class="role">Node.js Developer</span>
+                    <span class="role">Angular Developer</span>
                 </h2>
-                <p class="tagline">Building scalable and dynamic web applications with modern technologies.</p>
+                <p class="tagline">Building fast, maintainable web applications with Angular, Node.js, and a focus on
+                    performance.</p>
                 <div class="hero-buttons">
                     <a href="./assets/Ajil_VC_MEAN_Stack_Developer_Resume.pdf" target="_blank" class="btn btn-primary"
                         id="download-resume">View
@@ -160,18 +211,18 @@
             <circle cx="200" cy="200" r="3" fill="currentColor" stroke="none" />
         </svg>
         <div class="container reveal">
-            <h2 class="section-title">About Me</h2>
+            <h2 class="section-title">Building with Purpose</h2>
             <div class="about-content">
                 <div class="about-text">
+
                     <p>
-                        I am a passionate <strong>MEAN stack developer</strong> with a strong focus on building
-                        scalable, robust, and highly responsive web applications. I thrive on solving complex problems
-                        and turning innovative ideas into reality using modern web technologies.
-                    </p>
-                    <p>
-                        With a growth mindset at my core, I am constantly learning and adapting to the ever-evolving
-                        tech landscape. My goal is to write clean, maintainable code while delivering exceptional user
-                        experiences. Let's build something amazing together.
+                        Every application begins with a problem worth solving. My approach is to keep solutions
+                        <strong>simple</strong>,
+                        <strong>maintainable</strong>, and <strong>built for the long term</strong>. From architecture
+                        to user experience, I focus on
+                        creating software that is <strong>fast</strong>, <strong>reliable</strong>, and
+                        <strong>effortless</strong> to use. I believe performance isn't
+                        something added later. It's designed into the application from the very beginning.
                     </p>
                 </div>
             </div>
