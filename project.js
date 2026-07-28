@@ -9,10 +9,47 @@
     if (!project) {
         contentEl.hidden = true;
         notFoundEl.hidden = false;
+        const robotsTag = document.createElement('meta');
+        robotsTag.name = 'robots';
+        robotsTag.content = 'noindex, follow';
+        document.head.appendChild(robotsTag);
         return;
     }
 
-    document.title = `${project.name} — Ajil VC`;
+    const pageTitle = `${project.name} — Ajil VC`;
+    const pageDescription = `${project.tagline} — ${project.name} case study by Ajil VC, built with ${project.stack.join(', ')}.`;
+    const pageUrl = `https://ajil-vc.github.io/portfolio/project.html?id=${project.id}`;
+    const pageImage = `https://ajil-vc.github.io/portfolio/${project.image.replace(/^\.\//, '')}`;
+
+    document.title = pageTitle;
+    document.getElementById('meta-description').content = pageDescription;
+    document.getElementById('meta-canonical').href = pageUrl;
+    document.getElementById('og-url').content = pageUrl;
+    document.getElementById('og-title').content = pageTitle;
+    document.getElementById('og-description').content = pageDescription;
+    document.getElementById('og-image').content = pageImage;
+    document.getElementById('og-image-alt').content = `${project.name} — ${project.tagline}`;
+    document.getElementById('twitter-title').content = pageTitle;
+    document.getElementById('twitter-description').content = pageDescription;
+    document.getElementById('twitter-image').content = pageImage;
+
+    const jsonLd = document.createElement('script');
+    jsonLd.type = 'application/ld+json';
+    jsonLd.textContent = JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'CreativeWork',
+        name: project.name,
+        description: pageDescription,
+        url: pageUrl,
+        image: pageImage,
+        keywords: project.stack.join(', '),
+        creator: {
+            '@type': 'Person',
+            name: 'Ajil VC',
+            url: 'https://ajil-vc.github.io/portfolio/',
+        },
+    });
+    document.head.appendChild(jsonLd);
 
     const badgeLabel = project.type === 'client' ? 'Client Project' : 'Personal Project';
 
